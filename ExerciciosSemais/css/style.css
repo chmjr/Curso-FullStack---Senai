@@ -1,0 +1,73 @@
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: brown;
+    text-align: center;
+}
+p{
+    font-size: 14px;
+}
+body{
+    background-color: rgb(230, 230, 141);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    background-image: url(../images/back.jpg);
+    margin-top: 70px;
+}
+.navbar {
+    overflow: hidden;
+    font-weight: bold;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+  }
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    width: 80px;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    background: #ddd;
+    color: black;
+    transform: scale(1.1);
+    transition: 300ms linear; 
+  }
+  
+  /* Main content */
+  .main {
+    margin-top: 30px; /* Add a top margin to avoid content overlay */
+  }
+  
+#linha {
+  width: 100%;
+  border-bottom: 1px solid #000000;
+}
+    #btn{
+	width:120px;
+	height:60px;
+	background-color:white;
+    padding: 10px;
+    color: white;
+	border-radius: 10px;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 20px;
+    }
+    
+    #footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem;            /* altura do rodapé */
+        background-color: white;
+        float: right;
+        text-align: center;
+        font-weight: bold;
+    }
