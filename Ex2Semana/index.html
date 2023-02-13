@@ -1,36 +1,73 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Carteira Digital - Sua solução para pagamentos online</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="js/functions.js"></script>
   </head>
   <body>
-    <script src="js/functions.js"></script>
-    <h1>Carteira Digital</h1>
-    <img src="images/devDin.png" class="imgPrincipal">
-    <h2>Banco do Dev</h2>
-    <div class="container">
-      <div class="card" id="card">
-        <h3>Nunca mais espere em filas para pagar suas contas</h3>
-        <p>Com a nossa carteira digital, você pode pagar suas contas online de forma rápida e segura. Além disso, você pode armazenar suas informações de pagamento de forma segura e acessí-las a qualquer momento.</p>
-        <p>Não perca mais tempo esperando em filas ou preocupando-se com segurança de suas informações. Cadastre-se agora e tenha acesso a todas as vantagens da nossa carteira digital.</p>
-        <a href="#" onclick="exibirDiv();" class="btn">Cadastre-se agora</a>
-      </div>
-      <div class="card2" id="card2" style="display: none;">
-        <form>
-            <label style="margin-top: 15px;">Email:</label>
-            <input type="email" id="email" alt="email" id="email" size="50px" value="" placeholder="Digite o seu email"><br>
-            <label style="margin-top: 15px;">Nome:</label>
-            <input type="nome" alt="nome" id="nome" size="50px" value="" placeholder="Digite o seu nome completo"><br>
-            <label style="margin-top: 15px;">Telefone:</label>
-            <input type="tel" alt="telefone" id="tel" size="30px" value="" placeholder="Digite o seu telefone"><br>
+    <div id="card2-overlay">
+      <script src="js/functions.js"></script>
+      <h1>Carteira Digital</h1>
+      <img src="images/devDin.png" class="imgPrincipal" />
+      <h2>Banco do Dev</h2>
+      <div class="container">
+        <div class="card" id="card">
+          <h3>Nunca mais espere em filas para pagar suas contas</h3>
+          <p>
+            Com a nossa carteira digital, você pode pagar suas contas online de
+            forma rápida e segura. Além disso, você pode armazenar suas
+            informações de pagamento de forma segura e acessí-las a qualquer
+            momento.
+          </p>
+          <p>
+            Não perca mais tempo esperando em filas ou preocupando-se com
+            segurança de suas informações. Cadastre-se agora e tenha acesso a
+            todas as vantagens da nossa carteira digital.
+          </p>
+          <a href="#" onclick="exibirDiv();" class="btn">Cadastre-se agora</a>
+        </div>
+        <div class="card2" id="card2" style="display: none">
+          <a onclick="fecharDiv()" style="margin-left: 495px">X</a>
+          <form>
+            <label style="margin-top: 15px">Email:</label>
+            <input
+              type="email"
+              id="email"
+              alt="email"
+              id="email"
+              size="50px"
+              value=""
+              placeholder="Digite o seu email"
+            /><br />
+            <label style="margin-top: 15px">Nome:</label>
+            <input
+              type="nome"
+              alt="nome"
+              id="nome"
+              size="50px"
+              value=""
+              placeholder="Digite o seu nome completo"
+            /><br />
+            <label style="margin-top: 15px">Telefone:</label>
+            <input
+              type="tel"
+              alt="telefone"
+              id="tel"
+              size="30px"
+              placeholder="Digite o seu telefone"
+              onkeypress="mask(this, mphone);"
+            /><br />
             <a href="#" onclick="addLead();" class="btn">Cadastrar</a>
-            <div id="divConfirma" style="margin-top: 20px;"></div>
-        </form>
+            <div id="divConfirma" style="margin-top: 20px"></div>
+          </form>
+        </div>
       </div>
     </div>
   </body>
