@@ -1,10 +1,10 @@
 function exibirDiv() {
   document.getElementById("card2").style.display = "block";
-  document.getElementById("card2-overlay").style.zIndex = 4;
   document.getElementById("email").focus();
 }
 function fecharDiv() {
   document.getElementById("card2").style.display = "none";
+  document.getElementById("divConfirma").innerHTML = "";
 }
 function addLead() {
   if (confirm("Você só pode se cadastrar se tiver mais do que 18 anos?")) {
@@ -15,7 +15,10 @@ function addLead() {
     element.innerHTML =
       "<span class='msgConfirma'>Cadastro feito com sucesso! <br> Nossa equipe entrará em contato!</span>";
     alert("Fique tranquilo que suas informações seram bem cuidadas");
-    setTimeout(fecharDiv, 4000);
+    // setTimeout(fecharDiv, 4000);
+    setTimeout(function () {
+      window.location.href = "index.html";
+    }, 3000);
   } else {
     alert(
       "Desculpe mas você não pode se cadastrar no momento pela sua idade! Você será redirecionado..."
@@ -25,6 +28,7 @@ function addLead() {
     }, 3000);
   }
 }
+
 function mask(o, f) {
   setTimeout(function () {
     var v = mphone(o.value);
@@ -47,4 +51,21 @@ function mphone(v) {
     r = r.replace(/^(\d*)/, "($1");
   }
   return r;
+}
+
+function desfoca() {
+  var btn = document.getElementById("btn");
+  var overlay = document.getElementById("card2");
+
+  btn.addEventListener("click", function () {
+    document.getElementById("card2").style.display = "block";
+    document.getElementById("email").focus();
+    overlay.style.display = "block";
+    var divAtras = document.getElementById("card");
+    var img = document.getElementById("imgPrincipal");
+    var divFrente = document.getElementById("card2");
+    img.style.opacity = "0.5";
+    divAtras.style.opacity = "0.5";
+    divFrente.style.opacity = "1";
+  });
 }
