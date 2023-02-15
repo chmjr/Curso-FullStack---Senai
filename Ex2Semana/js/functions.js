@@ -5,6 +5,12 @@ function exibirDiv() {
 function fecharDiv() {
   document.getElementById("card2").style.display = "none";
   document.getElementById("divConfirma").innerHTML = "";
+  var divAtras = document.getElementById("card");
+  var img = document.getElementById("imgPrincipal");
+  var divFrente = document.getElementById("card2");
+  img.style.opacity = "1";
+  divAtras.style.opacity = "1";
+  divFrente.style.opacity = "1";
 }
 function addLead() {
   if (confirm("Você só pode se cadastrar se tiver mais do que 18 anos?")) {
