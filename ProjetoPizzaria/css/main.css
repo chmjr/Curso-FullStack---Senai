@@ -65,12 +65,13 @@ main h2 {
 footer {
   background-color: #333;
   color: white;
-  height: 80px;
+  height: 60px;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
   position: fixed;
   bottom: 0;
   width: 100%;
+  font-size: 12px;
 }
 a {
   color: #333;
@@ -81,8 +82,49 @@ a {
   align-items: center;
   margin-left: 30px;
 }
+.divright {
+  float: right;
+  align-items: center;
+  margin-right: 100px;
+}
 #linkPizza:hover {
   background-color: #a3a3a3;
   transition: 0.5s;
   opacity: 0.8;
+}
+
+#div2passo {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 500px;
+  height: 220px;
+  padding: 10px;
+  background-color: rgb(165, 165, 162);
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px #888888;
+  z-index: 4;
+  align-items: center;
+}
+
+#div3passo {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 500px;
+  height: 220px;
+  padding: 10px;
+  background-color: rgb(165, 165, 162);
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px #888888;
+  z-index: 4;
+  align-items: center;
 }
