@@ -37,33 +37,36 @@
             <p>R$ 45,00</p>
           </article>
         </a>
-        <article id="linkPizza">
-          <img src="images/pizzaCalabresa.jpg" alt="Pizza de Calabresa" />
-          <h2>Pizza de Calabresa</h2>
-          <p>
-            Maravilhosa pizza de calabresa com molho de tomate e queijo
-            muçarela. Acompanha cebola e pimenta calabresa.
-          </p>
-          <p>R$ 55,00</p>
-        </article>
-        <article id="linkPizza">
-          <img
-            src="images/pizzaFrango.jpg"
-            alt="Pizza de Frango com Catupiry"
-          />
-          <h2>Pizza de Frango com Catupiry</h2>
-          <p>
-            Incrível pizza de frango com molho de tomate, queijo muçarela e
-            catupiry.
-          </p>
-          <p>R$ 55,00</p>
-        </article>
+        <a href="#" onclick="exibirDiv()" id="linkEscolha1">
+          <article id="linkPizza">
+            <img src="images/pizzaCalabresa.jpg" alt="Pizza de Calabresa" />
+            <h2>Pizza de Calabresa</h2>
+            <p>
+              Maravilhosa pizza de calabresa com molho de tomate e queijo
+              muçarela. Acompanha cebola e pimenta calabresa.
+            </p>
+            <p>R$ 55,00</p>
+          </article>
+        </a>
+        <a href="#" onclick="exibirDiv()" id="linkEscolha1">
+          <article id="linkPizza">
+            <img
+              src="images/pizzaFrango.jpg"
+              alt="Pizza de Frango com Catupiry"
+            />
+            <h2>Pizza de Frango com Catupiry</h2>
+            <p>
+              Incrível pizza de frango com molho de tomate, queijo muçarela e
+              catupiry.
+            </p>
+            <p>R$ 55,00</p>
+          </article>
+        </a>
       </section>
     </main>
     <section>
       <div class="div2passo" id="div2passo">
-        <button onclick="fecharDiv()" style="margin-left: 500px">x</button>
-
+        <button onclick="fecharDiv()" style="margin-left: 420px">x</button>
         <p>
           <label style="margin-top: 15px">Escolha a massa de sua pizza:</label>
           <select name="massa" id="massa">
@@ -82,57 +85,61 @@
             <option value="cheddar">Cheddar + R$5,00</option></select
           ><br />
         </p>
-        <a href="#" onclick="exibirDivPasso3();" class="btn">Avançar</a>
+        <p id="btn">
+          <a href="#" onclick="exibirDivPasso3();">Avançar</a>
+        </p>
       </div>
     </section>
     <section>
       <div class="div3passo" id="div3passo">
-        <button onclick="fecharDiv23()" style="margin-left: 500px">x</button>
+        <button onclick="fecharDiv23()" style="margin-left: 480px">x</button>
         <p>
-          <label style="margin-top: 15px">Email:</label>
+          <span>Email:</span>
           <input
             type="email"
             id="email"
             alt="email"
             id="email"
-            size="50px"
+            size="40px"
             value=""
             placeholder="Digite o seu email"
           />
         </p>
         <p>
-          <label style="margin-top: 15px">Nome:</label>
+          <span>Nome:</span>
           <input
             type="nome"
             alt="nome"
             id="nome"
-            size="50px"
+            size="40px"
             value=""
             placeholder="Digite o seu nome completo"
           />
         </p>
         <p>
-          <label style="margin-top: 15px">Telefone:</label>
+          <span>Telefone:</span>
           <input
             type="tel"
             alt="telefone"
             id="tel"
-            size="30px"
+            size="20px"
             placeholder="Digite o seu telefone"
             onkeypress="mask(this, mphone);"
           />
         </p>
         <p>
-          <label style="margin-top: 15px">Endereço:</label>
+          <span>Endereço:</span>
           <input
             type="end"
             alt="endereco"
             id="end"
-            size="30px"
+            size="40px"
             placeholder="Digite o seu Endereço"
           />
         </p>
-        <a href="#" onclick="addLead();" class="btn">Avançar</a>
+        <p id="btn2">
+          <a href="#" onclick="addLead();">Avançar</a>
+        </p>
       </div>
     </section>
     <footer>
