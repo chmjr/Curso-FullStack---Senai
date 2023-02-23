@@ -1,6 +1,10 @@
 function exibirDiv(valor) {
   document.getElementById("div2passo").style.display = "block";
-  document.getElementById("soma").innerHTML = valor;
+  valor = Intl.NumberFormat("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  }).format(valor); //Formata o valor para R$
+  document.getElementById("soma").innerHTML = "Total: " + valor;
   document.getElementById("valorPizza").innerHTML = valor;
   var mainPage = document.getElementById("mainPage");
   mainPage.style.opacity = "0.5";
@@ -59,18 +63,14 @@ function somaSelectedMassa() {
   var valorPizza = document.getElementById("valorPizza").textContent;
   valorPizza = valorPizza.replace(/[^\d,]/g, ""); //Tratar numero quando vêm em valor R$
   valorPizza = valorPizza.replace(",", ".");
-  console.log(valorPizza);
   switch (document.getElementById("massa").value) {
     case "integral":
-      console.log(valorPizza);
       soma = integral + parseFloat(valorPizza);
-      console.log(soma);
       soma = Intl.NumberFormat("pt-br", {
         style: "currency",
         currency: "BRL",
       }).format(soma); //Formata o valor para R$
-      console.log(soma);
-      document.getElementById("soma").innerHTML = soma;
+      document.getElementById("soma").innerHTML = "Total: " + soma;
       break;
     case "temperada":
       soma = temperada + parseFloat(valorPizza);
@@ -78,7 +78,7 @@ function somaSelectedMassa() {
         style: "currency",
         currency: "BRL",
       }).format(soma); //Formata o valor para R$
-      document.getElementById("soma").innerHTML = soma;
+      document.getElementById("soma").innerHTML = "Total: " + soma;
       break;
   }
 }
@@ -96,7 +96,7 @@ function somaSelectedBorda() {
         style: "currency",
         currency: "BRL",
       }).format(soma); //Formata o valor para R$
-      document.getElementById("soma").innerHTML = soma;
+      document.getElementById("soma").innerHTML = "Total: " + soma;
 
     case "cheddar":
       soma = cheddar + parseFloat(valorPizza);
@@ -104,7 +104,7 @@ function somaSelectedBorda() {
         style: "currency",
         currency: "BRL",
       }).format(soma); //Formata o valor para R$
-      document.getElementById("soma").innerHTML = soma;
+      document.getElementById("soma").innerHTML = "Total: " + soma;
   }
 }
 

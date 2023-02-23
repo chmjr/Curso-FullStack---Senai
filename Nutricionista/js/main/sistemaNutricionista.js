@@ -1,4 +1,4 @@
-//import { Paciente } from "../models/paciente.js";
+import { Paciente } from "../models/paciente.js";
 
 var conta = 0;
 function addPaciente() {
@@ -8,8 +8,8 @@ function addPaciente() {
   var peso = document.getElementById("vlPeso").value;
   var altura = document.getElementById("vlAltura").value;
   var imc = peso / altura;
-  //let paciente = new Paciente(nome, sobrenome, peso, altura, imc);
-  //console.log(paciente);
+  var paciente = new Paciente(nome, sobrenome, peso, altura, imc);
+  console.log(paciente);
   imc = imc.toFixed(2);
   var linha =
     "<tr id='tableNutricao'><th scope='row' > " +
