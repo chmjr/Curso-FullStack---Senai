@@ -1,0 +1,23 @@
+{
+  "name": "curso-fullstack---senai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sistemaNutricionista.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rico700/Curso-FullStack---Senai.git"
+  },
+  "author": "Rico",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rico700/Curso-FullStack---Senai/issues"
+  },
+  "homepage": "https://github.com/rico700/Curso-FullStack---Senai#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}

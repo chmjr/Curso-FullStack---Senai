@@ -12,6 +12,7 @@
     />
   </head>
   <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/functions.js"></script>
     <header>
       <h1>Pizzaria do João</h1>
@@ -26,7 +27,7 @@
     <main id="mainPage">
       <h2>Escolha o seu sabor e clique para selecionar</h2>
       <section>
-        <a href="#" onclick="exibirDiv()" id="linkEscolha1">
+        <a href="#" onclick="exibirDiv(45)" id="linkEscolha1">
           <article id="linkPizza">
             <img src="images/pizza4Queijos.jpg" alt="Pizza de 4 Queijos" />
             <h2>Pizza de 4 Queijos</h2>
@@ -37,7 +38,7 @@
             <p>R$ 45,00</p>
           </article>
         </a>
-        <a href="#" onclick="exibirDiv()" id="linkEscolha1">
+        <a href="#" onclick="exibirDiv(55)" id="linkEscolha1">
           <article id="linkPizza">
             <img src="images/pizzaCalabresa.jpg" alt="Pizza de Calabresa" />
             <h2>Pizza de Calabresa</h2>
@@ -48,7 +49,7 @@
             <p>R$ 55,00</p>
           </article>
         </a>
-        <a href="#" onclick="exibirDiv()" id="linkEscolha1">
+        <a href="#" onclick="exibirDiv(55)" id="linkEscolha1">
           <article id="linkPizza">
             <img
               src="images/pizzaFrango.jpg"
@@ -70,7 +71,7 @@
         <p>
           <label style="margin-top: 15px">Escolha a massa de sua pizza:</label>
           <select name="massa" id="massa">
-            <option value="">--Selecione uma opção--</option>
+            <option value="0">--- Selecione uma opção ---</option>
             <option value="comum">Comum</option>
             <option value="integral">Integral + R$7,00</option>
             <option value="temperada">Temperada + R$8,00</option>
@@ -78,13 +79,15 @@
         </p>
         <p>
           <label style="margin-top: 15px">Escolha a borda de sua pizza:</label>
-          <select name="borda" id="borda">
-            <option value="">--Selecione uma opção--</option>
+          <select name="borda" id="borda" disabled>
+            <option value="0">--- Selecione uma opção ---</option>
             <option value="simples">Simples</option>
             <option value="catup">Catupiry + R$5,00</option>
             <option value="cheddar">Cheddar + R$5,00</option></select
           ><br />
         </p>
+        <p id="soma"></p>
+        <p id="valorPizza" style="display: none"></p>
         <p id="btn">
           <a href="#" onclick="exibirDivPasso3();">Avançar</a>
         </p>
@@ -153,7 +156,7 @@
       </div>
       <div class="divright">
         <p>
-          Endereço: Rua da Pizzaria, 123<br />Bairro: Calabresa<br />Cidade:Napoles
+          Endereço: Rua da Pizzaria, 123<br />Bairro: Calabresa<br />Cidade:Nápoles
         </p>
       </div>
     </footer>

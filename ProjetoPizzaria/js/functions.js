@@ -1,7 +1,15 @@
-function exibirDiv() {
+function exibirDiv(valor) {
   document.getElementById("div2passo").style.display = "block";
+  document.getElementById("soma").innerHTML = valor;
+  document.getElementById("valorPizza").innerHTML = valor;
   var mainPage = document.getElementById("mainPage");
   mainPage.style.opacity = "0.5";
+
+  var option1 = document.getElementById("massa");
+  var option2 = document.getElementById("borda");
+
+  option1.addEventListener("change", somaSelectedMassa);
+  option2.addEventListener("change", somaSelectedBorda);
 }
 function exibirDivPasso3() {
   document.getElementById("div3passo").style.display = "block";
@@ -42,4 +50,68 @@ function mphone(v) {
     r = r.replace(/^(\d*)/, "($1");
   }
   return r;
+}
+function somaSelectedMassa() {
+  habilitarCampos();
+  var soma = 0;
+  var integral = 7;
+  var temperada = 8;
+  var valorPizza = document.getElementById("valorPizza").textContent;
+  valorPizza = valorPizza.replace(/[^\d,]/g, ""); //Tratar numero quando vêm em valor R$
+  valorPizza = valorPizza.replace(",", ".");
+  console.log(valorPizza);
+  switch (document.getElementById("massa").value) {
+    case "integral":
+      console.log(valorPizza);
+      soma = integral + parseFloat(valorPizza);
+      console.log(soma);
+      soma = Intl.NumberFormat("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      }).format(soma); //Formata o valor para R$
+      console.log(soma);
+      document.getElementById("soma").innerHTML = soma;
+      break;
+    case "temperada":
+      soma = temperada + parseFloat(valorPizza);
+      soma = Intl.NumberFormat("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      }).format(soma); //Formata o valor para R$
+      document.getElementById("soma").innerHTML = soma;
+      break;
+  }
+}
+function somaSelectedBorda() {
+  var soma = 0;
+  var catup = 5;
+  var cheddar = 5;
+  var valorPizza = document.getElementById("soma").textContent;
+  valorPizza = valorPizza.replace(/[^\d,]/g, ""); //Tratar numero quando vêm em valor R$
+  valorPizza = valorPizza.replace(",", "."); // NUMERO PARA FLOAT (numeros presupostos que estão corretos em R$ > 1000,00)
+  switch (document.getElementById("borda").value) {
+    case "catup":
+      soma = catup + parseFloat(valorPizza);
+      soma = Intl.NumberFormat("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      }).format(soma); //Formata o valor para R$
+      document.getElementById("soma").innerHTML = soma;
+
+    case "cheddar":
+      soma = cheddar + parseFloat(valorPizza);
+      soma = Intl.NumberFormat("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      }).format(soma); //Formata o valor para R$
+      document.getElementById("soma").innerHTML = soma;
+  }
+}
+
+function habilitarCampos() {
+  if ($("#massa").val() != "0") {
+    $("#borda").prop("disabled", false);
+  } else {
+    $("#borda").prop("disabled", true);
+  }
 }
