@@ -143,7 +143,7 @@ a {
   right: 0;
   margin: auto;
   width: 500px;
-  height: 250px;
+  height: 350px;
   padding: 10px;
   background-color: rgb(165, 165, 162);
   border-radius: 10px;
@@ -151,6 +151,27 @@ a {
   z-index: 4;
   align-items: center;
 }
+#div4passo {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 500px;
+  height: 410px;
+  padding: 10px;
+  background-color: rgb(165, 165, 162);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #888888;
+  z-index: 5;
+  align-items: center;
+}
+#div4passo p {
+  margin-left: 25px;
+}
+
 #div3passo label {
   display: inline-block;
   width: 60px;
@@ -163,7 +184,6 @@ input[type="number"] {
   padding: 2px;
   border: none;
   border-bottom: 1px solid black;
-  width: 200px;
   margin: 0px;
 }
 #div3passo a {

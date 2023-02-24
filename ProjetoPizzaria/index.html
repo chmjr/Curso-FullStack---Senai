@@ -14,6 +14,8 @@
   <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/validacoes.js"></script>
+    <script src="js/mascaraCampos.js"></script>
     <header>
       <h1>Pizzaria do João</h1>
       <div class="retMenu">
@@ -27,7 +29,11 @@
     <main id="mainPage">
       <h2>Escolha o seu sabor e clique para selecionar</h2>
       <section>
-        <a href="#" onclick="exibirDiv(45)" id="linkEscolha1">
+        <a
+          href="#"
+          onclick="exibirDiv(45, 'Pizza de calabresa')"
+          id="linkEscolha1"
+        >
           <article id="linkPizza">
             <img src="images/pizza4Queijos.jpg" alt="Pizza de 4 Queijos" />
             <h2>Pizza de 4 Queijos</h2>
@@ -35,10 +41,14 @@
               Deliciosa pizza de 4 Queijos com queijo mussarela, queijo
               parmesão, queijo parmesão e quejo provolone.
             </p>
-            <p>R$ 45,00</p>
+            <p style="font-size: 14px;">R$ 45,00</p>
           </article>
         </a>
-        <a href="#" onclick="exibirDiv(55)" id="linkEscolha1">
+        <a
+          href="#"
+          onclick="exibirDiv(55, 'Pizza de Calabresa')"
+          id="linkEscolha1"
+        >
           <article id="linkPizza">
             <img src="images/pizzaCalabresa.jpg" alt="Pizza de Calabresa" />
             <h2>Pizza de Calabresa</h2>
@@ -46,10 +56,14 @@
               Maravilhosa pizza de calabresa com molho de tomate e queijo
               muçarela. Acompanha cebola e pimenta calabresa.
             </p>
-            <p>R$ 55,00</p>
+            <p style="font-size: 14px;">R$ 55,00</p>
           </article>
         </a>
-        <a href="#" onclick="exibirDiv(55)" id="linkEscolha1">
+        <a
+          href="#"
+          onclick="exibirDiv(55, 'Pizza de Frango com Catupiry')"
+          id="linkEscolha1"
+        >
           <article id="linkPizza">
             <img
               src="images/pizzaFrango.jpg"
@@ -60,7 +74,7 @@
               Incrível pizza de frango com molho de tomate, queijo muçarela e
               catupiry.
             </p>
-            <p>R$ 55,00</p>
+            <p style="font-size: 14px;">R$ 55,00</p>
           </article>
         </a>
       </section>
@@ -83,11 +97,13 @@
             <option value="0">--- Selecione uma opção ---</option>
             <option value="simples">Simples</option>
             <option value="catup">Catupiry + R$5,00</option>
-            <option value="cheddar">Cheddar + R$5,00</option></select
+            <option value="cheddar">Cheddar + R$6,00</option></select
           ><br />
         </p>
         <p id="soma"></p>
         <p id="valorPizza" style="display: none"></p>
+        <p id="valorPizzaMassa" style="display: none"></p>
+        <input id="pizza" value="" type="text" style="display: none"></input>
         <p id="btn">
           <a href="#" onclick="exibirDivPasso3();">Avançar</a>
         </p>
@@ -131,18 +147,45 @@
           />
         </p>
         <p>
-          <label>Endereço:</label>
+          <label>CEP:</label>
           <input
-            type="end"
-            alt="endereco"
-            id="end"
-            size="40px"
-            placeholder="Digite o seu Endereço"
+            type="text"
+            alt="cep"
+            id="cep"
+            size="15px"
+            maxlength="9"
+            onblur="buscarEndereco()"
+            oninput="mascaraCep()"
+            placeholder="Digite o seu CEP"
           />
         </p>
-        <p id="btn2">
-          <a href="#" onclick="addLead();">Avançar</a>
+        <p>
+          <label>Rua:</label>
+          <input type="text" alt="rua" id="rua" size="25px" readonly />
+
+          <label>Número:</label>
+          <input type="text" alt="numero" id="numero" size="5px" />
         </p>
+        <p>
+          <label>Bairro:</label>
+          <input type="text" alt="bairro" id="bairro" size="15px" readonly />
+
+          <label>Cidade:</label>
+          <input type="cidade" alt="cidade" id="cidade" size="15px" readonly />
+        </p>
+        <p>
+          <label>Estado:</label>
+          <input type="text" alt="estado" id="estado" size="15px" readonly />
+        </p>
+        <p id="btn2">
+          <a href="#" onclick="exibirDivPasso4();">Avançar</a>
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="div4passo" id="div4passo">
+        <button onclick="fecharDiv4()" style="margin-left: 480px">x</button>
+        <p id="resumoPedido"></p>
       </div>
     </section>
     <footer>
