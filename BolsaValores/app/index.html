@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Negociação de Ações</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Iceberg"
+      rel="stylesheet"
+    />
+    <link href="css/main.css" rel="stylesheet" />
+  </head>
+  <body>
+   <div class="divForm" id="divForm">
+      <h2>CADASTRO DE NEGOCIAÇÃO DE AÇÕES</h2>
+      <p>
+        <label>Ticker:</label>
+        <input
+          type="text"
+          alt="Ticker"
+          id="ticker"
+          size="10px"
+          placeholder="Digite o Ticker da ação"
+          maxlength="15"
+        />
+        <select id="list">
+          <option value="0">Selecione o Ticker</option>
+        </select>
+      </p>
+      <p>
+        <label>Data de Negociação:</label>
+        <input
+          type="date"
+          id="dtNeg"
+          alt="data"
+          id="dtNeg"
+          size="40px"
+          value=""
+          placeholder="Digite a data de Negociação"
+        />
+      </p>
+      <p>
+        <label>Quantidade:</label>
+        <input
+          type="number"
+          alt="quantidade de acoes"
+          id="qtdAcoes"
+          min="1"
+          max="100"
+          size="40px"
+          value=""
+          onchange="validaInt1a100()"
+          required
+          placeholder="Digite a quantidade de ações vendidas de 0 - 100"
+        />
+      </p>
+      <p>
+        <label>Valor Negociado:</label>
+        <input
+          type="text"
+          alt="valor Negociado"
+          id="vlNeg"
+          size="20px"
+          placeholder="Digite o valor de negociação"
+          maxlength="15"
+          onInput="mascaraMoeda(event);"
+        />
+      </p>
+      <p id="btn">
+        <a href="#" id="btnAdd">Avançar</a>
+      </p>
+    </div>
+    <script src="js/mascaraCampos.js"></script>
+    <script src="js/validaCampos.js"></script>
+    <script type="module" src="js/main/programa.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  </body>
+</html>

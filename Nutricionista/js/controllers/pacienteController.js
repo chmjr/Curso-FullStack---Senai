@@ -5,7 +5,7 @@ export class PacienteController {
   #campoPeso;
   #campoAltura;
 
-  costructor() {
+  constructor() {
     this.#campoNome = document.getElementById("nome");
     this.#campoSobrenome = document.getElementById("sobrenome");
     this.#campoPeso = document.getElementById("peso");

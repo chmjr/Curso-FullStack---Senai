@@ -1,7 +1,9 @@
-import { Paciente } from "../models/paciente.js";
+import { PacienteController } from "../controllers/pacienteController.js";
 
-let paciente = new Paciente("Maria", "Silva", 90, 1.85);
-console.log(paciente.nome);
-paciente.peso = 50;
-console.log(paciente.nome);
-console.log(paciente);
+const botao = document.querySelector("#btnAdd");
+const controller = new PacienteController();
+
+botao.addEventListener("click", () => {
+  event.preventDefault();
+  controller.criarPaciente();
+});

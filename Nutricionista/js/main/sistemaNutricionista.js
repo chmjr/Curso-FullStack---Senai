@@ -11,7 +11,8 @@ function addPaciente() {
   var paciente = new Paciente(nome, sobrenome, peso, altura, imc);
   console.log(paciente);
   imc = imc.toFixed(2);
-  var linha =
+  var linha = "";
+
     "<tr id='tableNutricao'><th scope='row' > " +
     conta +
     "</th><td>" +
