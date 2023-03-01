@@ -1,11 +1,12 @@
 export class ListaNegociacoes {
-    #negociacoes = []; //Array privado
+  #negociacoes = []; //Array privado
 
-adicionar (negociacao){
+  adicionar(negociacao) {
     this.#negociacoes.push(negociacao); //Adicionando o objeto paciente no array
-}
+  }
 
-get pacientes(){
-    return [].concat(this.#negociacoes); //Protegendo o array, retornando uma cópia do array original
-}
+  get negociacoes() {
+    return this.#negociacoes; // Para apagar o array tive que deixar ele apagar o original
+    //return [].concat(this.#negociacoes); //Protegendo o array, retornando uma cópia do array original
+  }
 }

@@ -12,7 +12,7 @@
     <link href="css/main.css" rel="stylesheet" />
   </head>
   <body>
-   <div class="divForm" id="divForm">
+    <div class="divForm" id="divForm">
       <h2>CADASTRO DE NEGOCIAÇÃO DE AÇÕES</h2>
       <p>
         <label>Ticker:</label>
@@ -47,10 +47,8 @@
           alt="quantidade de acoes"
           id="qtdAcoes"
           min="1"
-          max="100"
           size="40px"
           value=""
-          onchange="validaInt1a100()"
           required
           placeholder="Digite a quantidade de ações vendidas de 0 - 100"
         />
@@ -71,9 +69,33 @@
         <a href="#" id="btnAdd">Avançar</a>
       </p>
     </div>
+    <div class="divTabela" id="divTabela">
+      <h2>Lista Negociações</h2>
+      <table id="tabelaNegociacoes" class="tabelaNegociacoes">
+        <thead>
+          <tr>
+            <th class="tabela-negociacoes-cabecalho">ID</th>
+            <th class="tabela-negociacoes-cabecalho">Ticker</th>
+            <th class="tabela-negociacoes-cabecalho">Data</th>
+            <th class="tabela-negociacoes-cabecalho">Quantidade</th>
+            <th class="tabela-negociacoes-cabecalho">Valor</th>
+            <th class="tabela-negociacoes-cabecalho">Ações</th>
+          </tr>
+        </thead>
+        <tbody id="lista"></tbody>
+      </table>
+    </div>
     <script src="js/mascaraCampos.js"></script>
     <script src="js/validaCampos.js"></script>
     <script type="module" src="js/main/programa.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+      var today = new Date();
+      var dy = today.getDate();
+      var mt = today.getMonth() + 1;
+      var yr = today.getFullYear();
+      document.getElementById("dtNeg").value =
+        yr + "-" + (mt < 10 ? "0" + mt : mt) + "-" + (dy < 10 ? "0" + dy : dy);
+    </script>
   </body>
 </html>

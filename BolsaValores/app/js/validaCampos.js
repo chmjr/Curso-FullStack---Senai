@@ -20,7 +20,6 @@ async function getSuggestions() {
     return;
   }
   const url = `${endpoint}?function=SYMBOL_SEARCH&keywords=${query}&apikey=${apiKey}&region=BR`;
-  console.log(url);
   try {
     const response = await fetch(url);
     const data = await response.json();

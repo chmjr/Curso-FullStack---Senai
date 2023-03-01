@@ -19,5 +19,8 @@
   "homepage": "https://github.com/rico700/Curso-FullStack---Senai#readme",
   "devDependencies": {
     "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "shortid": "^2.2.16"
   }
 }

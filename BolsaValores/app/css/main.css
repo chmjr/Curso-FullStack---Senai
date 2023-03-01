@@ -3,18 +3,31 @@ body {
   background-color: #d5fff4;
 }
 h1 {
-margin-left: 30%;
-margin-right: 30%;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 #divForm {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 20;
-  right: 10;
-  margin: auto;
+  left: 20px;
+  right: 10px;
   width: 400px;
+  height: 280px;
+  padding: 10px;
+  background-color: rgb(165, 165, 162);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #888888;
+}
+
+#divTabela {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 500px;
+  right: 20px;
+  width: 700px;
   height: 280px;
   padding: 10px;
   background-color: rgb(165, 165, 162);
@@ -33,4 +46,20 @@ margin-right: 30%;
 }
 #divForm p#btn {
   margin-top: 30px;
+}
+#tabelaNegociacoes {
+  border-collapse: collapse;
+  width: 100%;
+}
+.tabela-negociacoes-cabecalho {
+  background-color:  #49664a;
+  color: white;
+  text-align: left;
+  width: 100%;
+  padding: 8px;
+}
+
+#tabelaNegociacoes td {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
