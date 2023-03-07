@@ -8,9 +8,19 @@
   </head>
   <body>
     <script>
-      var arrayFrutas = ["Banana", "Morango", "Maça", "Uva", "Pêra"];
+      var arrayFrutas = [
+        {
+          Banana: "Banana",
+          Morango: "Morango",
+          Maça: "Maça",
+          Uva: "Uva",
+          Pêra: "Pêra",
+        },
+      ];
       arrayFrutas.forEach((fruta) => {
-        localStorage.setItem(fruta, fruta);
+        Object.entries(fruta).forEach(([chave, valor]) => {
+          localStorage.setItem(chave, valor);
+        });
       });
     </script>
   </body>

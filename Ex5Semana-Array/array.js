@@ -47,10 +47,11 @@ const arrowQuadrados = (arrayNumeros) => {
 }
 console.log(arrowQuadrados(arrayNumeros));
 */
+
 function localStorageFrutas(){
 var arrayFrutas = ["Banana", "Morango", "Maça", "Uva", "Pêra"];
 
-arrayFrutas.forEach((fruta) => {
-  localStorage.setItem(fruta, fruta);
+arrayFrutas.forEach((fruta) => { //Foreach percorre o Array elemento por elemento.
+  localStorage.setItem(fruta, fruta); //Guarda cada item no localstorage
 });
 }

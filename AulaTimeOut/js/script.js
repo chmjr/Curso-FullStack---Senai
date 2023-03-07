@@ -33,12 +33,15 @@ botao.onclick = function () {
 function salvarConvidados() {
   //Salvar no localStorage array convertido em JSON
   localStorage.setItem("convidados", JSON.stringify(convidados));
+  listarConvidados();
 }
 function listarConvidados() {
   for (const convidado of convidados) {
     var elConvidado = document.createElement("li");
     var elNome = document.createTextNode(convidado.nome);
   }
+  elConvidado.appendChild(elNome);
+  document.getElementById("listaConvidados").appendChild(elConvidado);  
 }
 
 let ligar;

@@ -13,7 +13,7 @@ function validarNome(nome) {
 // Função que busca o endereço com base no CEP informado
 function buscarEndereco() {
   // Obter o valor do CEP informado pelo usuário
-  var cep = document.getElementById("cep").value;
+  var cep = document.getElementById("campoCep").value;
   cep = cep.replace("-", "").replace(".", "");
   // Validar o CEP pela faixa desejada (88000-000 a 88099-999)
   if (/^88[0-8]\d{5}$/.test(cep)) {
@@ -25,11 +25,11 @@ function buscarEndereco() {
       .then((response) => response.json())
       .then((data) => {
         // Preencher os campos do formulário com os dados do endereço
-        document.getElementById("rua").value = data.logradouro;
-        document.getElementById("bairro").value = data.bairro;
-        document.getElementById("cidade").value = data.localidade;
-        document.getElementById("estado").value = data.uf;
-        document.getElementById("numero").focus();
+        document.getElementById("campoRua").value = data.logradouro;
+        document.getElementById("campoBairro").value = data.bairro;
+        document.getElementById("campoCidade").value = data.localidade;
+        document.getElementById("campoEstado").value = data.uf;
+        document.getElementById("campoNumero").focus();
       })
       .catch((error) => {
         console.log("Erro ao buscar endereço: " + error.message);
